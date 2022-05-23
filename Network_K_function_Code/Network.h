@@ -12,6 +12,10 @@ struct Point
 	double dist_n1;
 	double dist_n2;
 	int edge_index;
+
+	bool operator<(const Point& p) const {
+		return dist_n1 < p.dist_n1;
+	}
 };
 
 struct Edge
@@ -72,5 +76,6 @@ struct model
 void init_paremeters(int argc, char**argv, model& our_model);
 void load_Network(model& our_model);
 void output_result(model& our_model);
+void sort_data_points(model& our_model);
 
 #endif

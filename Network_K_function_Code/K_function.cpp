@@ -130,6 +130,13 @@ void call_SPS(model& our_model)
 void compute_K_function(model& our_model)
 {
 	double run_time;
+	double sort_time;
+
+	auto start_sort_s = chrono::high_resolution_clock::now();
+	sort_data_points(our_model);
+	auto end_sort_s = chrono::high_resolution_clock::now();
+	sort_time = (chrono::duration_cast<chrono::nanoseconds>(end_sort_s - start_sort_s).count()) / 1000000000.0;
+	cout << "method " << our_model.method << " (sort time):" << sort_time << endl;
 
 	auto start_s = chrono::high_resolution_clock::now();
 	
@@ -147,5 +154,6 @@ void compute_K_function(model& our_model)
 	auto end_s = chrono::high_resolution_clock::now();
 
 	run_time = (chrono::duration_cast<chrono::nanoseconds>(end_s - start_s).count()) / 1000000000.0;
-	std::cout << "method " << our_model.method << ":" << run_time << endl;
+	cout << "method " << our_model.method << " (run time):" << run_time << endl;
+	cout << "method " << our_model.method << " (total time):" << (sort_time + run_time) << endl;
 }

@@ -74,3 +74,13 @@ void output_result(model& our_model)
 	//Only focus on calculating a single K-function value
 	cout << "The network K-function value is: " << our_model.K_value << endl;
 }
+
+void sort_data_points(model& our_model)
+{
+	//Sorting the data points
+	if (our_model.method >= 3 && our_model.method <= 6)
+	{
+		for (int e = 0; e < our_model.num_edges; e++)
+			sort(our_model.edge_set[e].PS.begin(), our_model.edge_set[e].PS.end());
+	}
+}
