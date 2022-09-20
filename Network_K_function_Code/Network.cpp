@@ -8,7 +8,7 @@ void init_paremeters(int argc, char**argv, model& our_model)
 	our_model.tau = 6;*/
 	our_model.network_fileName = argv[1];
 	our_model.method = atoi(argv[2]);
-	our_model.tau = atoi(argv[3]);
+	our_model.tau = atof(argv[3]);
 }
 
 void load_Network(model& our_model)
