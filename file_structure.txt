@@ -6,7 +6,7 @@ The following file structure is adopted by our code.
 :
 :
 :
-(|E|^{th} edge id) [first node id] [second node id] [road length] [Number of data points N_{|E|} in this edge] [distance from the [1^{st} data point] to [first node id]] [distance from the [1^{st} data point] to [second node id]], [distance from the [2^{nd} data point] to [first node id]] [distance from the [2^{nd} data point] to [second node id]] ... [distance from the [{N_|E|}^{th} data point] to [first node id]] [distance from the [{N_|E|}^{th} data point] to [second node id]]
+(|E|^{th} edge id) [first node id] [second node id] [road length] [Number of data points N_{|E|} in this edge] [distance from the [1^{st} data point] to [first node id]] [distance from the [1^{st} data point] to [second node id]] [distance from the [2^{nd} data point] to [first node id]] [distance from the [2^{nd} data point] to [second node id]] ... [distance from the [{N_|E|}^{th} data point] to [first node id]] [distance from the [{N_|E|}^{th} data point] to [second node id]]
 [Number of nodes |V|]
 (1^{st} node id) [degree d_1] [1^{st} edge id] [2^{nd} edge id] ... [{d_1}^{th} edge id]
 (2^{nd} node id) [degree d_2] [1^{st} edge id] [2^{nd} edge id] ... [{d_2}^{th} edge id]
@@ -20,6 +20,6 @@ First part: We need to store the number of edges |E| (line 3) and do not need to
 For each edge (e.g., line 4), we need to store two node ids, namely "first node id" and "second node id" (which correspond to two end points of this edge), the road length, and the number of data points in this edge. Then, we need to store the distance values of each data point to these two end points.
 In total, there are |E| edges.
 
-Second part: We need to store the number of nodes (line 10) and do not need to store the node id inside the parentheses "()", since our code regards the "1^{st} node id" as 0, "1^{nd} node id" as 1...
+Second part: We need to store the number of nodes (line 10) and do not need to store the node id inside the parentheses "()", since our code regards the "1^{st} node id" as 0, "2^{nd} node id" as 1...
 For each node (e.g., line 11), we need to store the degree of this node and the edge ids that are linked to this node.
 In total, there are |V| nodes.
